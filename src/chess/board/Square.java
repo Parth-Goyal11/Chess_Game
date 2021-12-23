@@ -3,8 +3,8 @@ package comm.chess.engine.board;
 import comm.chess.engine.pieces.Piece;
 
 public abstract class Square{
-    int X;
-    int Y;
+    protected int X;
+    protected int Y;
 
 
     Square(Coordinate position){                       //Set a square as a position
@@ -15,6 +15,15 @@ public abstract class Square{
     public abstract boolean tileFull();
 
     public abstract Piece getPiece();
+
+    public static Square addSquare (Coordinate position, Piece piece){
+        if(piece != null){
+            return new occupiedSquare(position, piece);
+
+        }else{
+            return new blankSquare(position);
+        }
+    }
 
     public static final class blankSquare extends Square{   //Function Behavior for an empty square
 
