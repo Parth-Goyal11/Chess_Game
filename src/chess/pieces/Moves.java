@@ -1,2 +1,4 @@
-package chess.pieces;public class Moves {
+package chess.pieces;
+
+public class Moves {
 }

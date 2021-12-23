@@ -1,4 +1,4 @@
-package comm.chess.engine.board;
+package chess.board;
 
 public class Coordinate {     //Use coordinates up to [64, 64] to show a unique coordinate for each square
     protected int X;

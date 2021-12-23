@@ -1,8 +1,18 @@
-package comm.chess.engine.pieces;
+package chess.pieces;
 
-import comm.chess.engine.board.Coordinate;
+import chess.board.Board;
+import chess.board.Coordinate;
 
-public class Piece {
+import java.util.Set;
+
+public abstract class Piece {
     protected Color pieceColor;
     protected Coordinate piecePosition;
+
+    Piece(Color pieceColor, Coordinate piecePosition){
+        this.pieceColor = pieceColor;
+        this.piecePosition = piecePosition;
+    }
+
+    public abstract Set<Moves> determinePossibleMoves(Board board);
 }

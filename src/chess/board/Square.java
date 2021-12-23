@@ -1,15 +1,15 @@
-package comm.chess.engine.board;
+package chess.board;
 
-import comm.chess.engine.pieces.Piece;
+import chess.pieces.Piece;
 
 public abstract class Square{
-    protected int X;
-    protected int Y;
+    protected Coordinate position;
+    /*protected int X;
+    protected int Y;*/
 
 
     Square(Coordinate position){                       //Set a square as a position
-        this.X = position.X;
-        this.Y = position.Y;
+        this.position = position;
     }
 
     public abstract boolean tileFull();
