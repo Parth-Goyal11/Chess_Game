@@ -38,22 +38,22 @@ public class Knight extends Piece{
             int newY = piecePosition.Y + c.Y;
 
             Coordinate testPoint = new Coordinate(newX, newY);
-            if(testPoint.X < 8 && testPoint.Y < 8){
+            if(board.isValidPoint(testPoint)){
 
-                Square boardPoint = board.getSquare(testPoint);
+                Square boardPoint = board.retSquare(testPoint);
 
                 if(!boardPoint.tileFull()){
-                    moves.add(new Moves());
+                    moves.add(new Moves.normalMove(board, this, testPoint));
                 }else{
                     Piece occupyingPiece = boardPoint.getPiece();
                     Color occupyingPieceColor = occupyingPiece.getColor();
 
                     if(occupyingPieceColor != pieceColor){
-                        moves.add(new Moves());
+                        moves.add(new Moves.kill(board, this, testPoint, occupyingPiece));
                     }
                 }
             }
         }
-        return null;
+        return moves;
     }
 }

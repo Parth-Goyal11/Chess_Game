@@ -3,6 +3,8 @@ package chess.board;
 import chess.pieces.Piece;
 
 public abstract class Square{
+    public static int Num_Rows = 8;
+    public static int Num_Columns = 8;
     protected Coordinate position;
     /*protected int X;
     protected int Y;*/
@@ -11,6 +13,8 @@ public abstract class Square{
     Square(Coordinate position){                       //Set a square as a position
         this.position = position;
     }
+
+
 
     public abstract boolean tileFull();
 
