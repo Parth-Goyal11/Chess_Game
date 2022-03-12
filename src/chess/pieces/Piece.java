@@ -19,5 +19,15 @@ public abstract class Piece {
         return pieceColor;
     }
 
+    public boolean firstMove(){
+        boolean firstMove;
+        if(pieceColor == Color.BLACK && piecePosition.Y == 7 || pieceColor == Color.WHITE && piecePosition.Y == 2){
+            firstMove = true;
+        }else{
+            firstMove = false;
+        }
+        return firstMove;
+    }
+
     public abstract List<Moves> determinePossibleMoves(Board board);
 }
